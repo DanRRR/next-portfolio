@@ -1,14 +1,40 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// import { Geist, Geist_Mono } from "next/font/google";
+// import { Schibsted_Grotesk, Space_Grotesk, Bricolage_Grotesque} from "next/font/google";
+// import { Inter, Inter_Tight, Roboto} from "next/font/google";
+import {
+  Bebas_Neue,
+  Space_Grotesk,
+  Schibsted_Grotesk,
+  Inter,
+  Inter_Tight,
+  // Roboto,
+} from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas-neue",
+  weight: "400",
   subsets: ["latin"],
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  weight: ["500", "600"],
+  subsets: ["latin"],
+});
+const schiGrotesk = Schibsted_Grotesk({
+  variable: "--font-schi-grotesk",
+  weight: ["700", "600"],
+  subsets: ["latin"],
+});
+const inter = Inter({
+  variable: "--font-inter",
+  weight: ["700", "600"],
+  subsets: ["latin"],
+});
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  weight: ["700", "600"],
   subsets: ["latin"],
 });
 
@@ -25,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${bebasNeue.variable} ${spaceGrotesk.variable} ${schiGrotesk.variable} ${inter.variable} ${interTight.variable} antialiased`}
       >
         {children}
       </body>
