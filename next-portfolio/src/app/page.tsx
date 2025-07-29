@@ -1,9 +1,15 @@
+"use client";
 // import Image from "next/image";
 // import Link from "next/link";
 // If Navbar.tsx is in src/components/Navbar.tsx, use the following relative import:
 import Navbar from "@components/Navbar";
+import SplitText from "@components/SplitText";
 
 export default function Home() {
+  const handleAnimationComplete = () => {
+    console.log("All letters have animated!");
+  };
+
   return (
     <>
       <main>
@@ -12,7 +18,22 @@ export default function Home() {
         <section className="h-screen flex items-center justify-center">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight">
             DAN
+           
           </h1>
+           <SplitText
+              text="Hey, I am Dan "
+              className="text-2xl font-semibold text-center"
+              delay={100}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+              onLetterAnimationComplete={handleAnimationComplete}
+            />
         </section>
       </main>
 
