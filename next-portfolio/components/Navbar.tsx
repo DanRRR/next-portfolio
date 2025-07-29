@@ -29,7 +29,7 @@ export default function Navbar() {
           <CircularText
             text="Dan * Thiraphat * Ruksujarit * "
             onHover="slowDown"
-            spinDuration={20}
+            spinDuration={40}
             className="w-[160px] h-[160px]"
           />
         </div>
