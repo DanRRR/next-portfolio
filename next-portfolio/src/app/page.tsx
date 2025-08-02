@@ -3,12 +3,13 @@
 // import Link from "next/link";
 // If Navbar.tsx is in src/components/Navbar.tsx, use the following relative import:
 import Navbar from "@components/Navbar";
-import SplitText from "@components/SplitText";
+// import SplitText from "@components/SplitText";
+import TextType from "@components/TextType";
 
 export default function Home() {
-  const handleAnimationComplete = () => {
-    console.log("All letters have animated!");
-  };
+  // const handleAnimationComplete = () => {
+  //   console.log("All letters have animated!");
+  // };
 
   return (
     <>
@@ -16,13 +17,21 @@ export default function Home() {
         <Navbar />
 
         <section className="h-screen flex items-center justify-center">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight">
-            DAN
-           
+          <h1 className="font-grotesk text-6xl md:text-8xl font-bold tracking-tight leading-tight">
+            {/* &gt; Welcome. */}
+            <TextType
+              text={[">Welcome to...", " >Dev with Dan"]}
+              typingSpeed={100}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+              loop={false}
+            />
           </h1>
-           <SplitText
-              text="Hey, I am Dan "
-              className="text-2xl font-semibold text-center"
+          {/* <h2>
+            <SplitText
+              text=" I am Dan "
+              className="font-grotesk text-2xl md:text-8xl font-bold tracking-tight leading-tight"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -34,6 +43,14 @@ export default function Home() {
               textAlign="center"
               onLetterAnimationComplete={handleAnimationComplete}
             />
+          </h2> */}
+          {/* <TextType
+            text={["Text typing effect", "for your websites", "Happy coding!"]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter="|"
+          /> */}
         </section>
       </main>
 

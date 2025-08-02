@@ -9,6 +9,7 @@ import {
   Schibsted_Grotesk,
   Inter,
   Inter_Tight,
+  Playfair_Display
   // Roboto,
 } from "next/font/google";
 
@@ -37,6 +38,11 @@ const interTight = Inter_Tight({
   weight: ["700", "600"],
   subsets: ["latin"],
 });
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  weight: ["700", "800"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -51,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bebasNeue.variable} ${spaceGrotesk.variable} ${schiGrotesk.variable} ${inter.variable} ${interTight.variable} antialiased`}
+        className={`${bebasNeue.variable} ${spaceGrotesk.variable} ${schiGrotesk.variable} ${inter.variable} ${interTight.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>

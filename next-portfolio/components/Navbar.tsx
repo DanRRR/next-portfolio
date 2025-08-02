@@ -14,7 +14,7 @@ export default function Navbar() {
         {/* Logo at lower z-index */}
         <Link
           href="/"
-          className="absolute inset-0 z-10 flex items-center justify-center px-2.5 hover:opacity-80 transition pointer-events-none"
+          className="absolute inset-0 z-10 flex items-center justify-center px-2.5 hover:opacity-80 transition pointer-events-auto"
         >
           <Image
             src="/transparent_chrome.png"
@@ -25,7 +25,7 @@ export default function Navbar() {
         </Link>
 
         {/* Circular spinning text in front */}
-        <div className="absolute inset-0 flex items-center justify-center z-20">
+        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
           <CircularText
             text="Dan * Thiraphat * Ruksujarit * "
             onHover="slowDown"
