@@ -6,6 +6,7 @@ import Navbar from "@components/Navbar";
 import SplitText from "@components/SplitText";
 import TextType from "@components/TextType";
 // import { useEffect, useState } from "react";
+import ProfileCard from "@components/ProfileCard";
 
 export default function Home() {
   const handleAnimationComplete = () => {
@@ -56,46 +57,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section className="h-screen flex items-center justify-center">
-          
-          <h1 className="font-grotesk text-6xl md:text-8xl font-bold tracking-tight leading-tight bg-amber-200">
-            <TextType
-              text={[">Welcome to...", " >Dev with Dan"]}
-              typingSpeed={100}
-              pauseDuration={1500}
-              showCursor={true}
-              cursorCharacter="|"
-              loop={false}
-            />
-          </h1> */}
-
-        {/* <h2>
-            <SplitText
-              text=" I am Dan "
-              className="font-grotesk text-2xl md:text-8xl font-bold tracking-tight leading-tight"
-              delay={100}
-              duration={0.6}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-            />
-          </h2> */}
-        {/* <TextType
-            text={["Text typing effect", "for your websites", "Happy coding!"]}
-            typingSpeed={75}
-            pauseDuration={1500}
-            showCursor={true}
-            cursorCharacter="|"
-          /> */}
-        {/* </section> */}
+        {/* About Section */}
+        <section
+          id="about"
+          className=" bg-amber-200 h-screen flex flex-col justify-start items-center pt-50 sm:pt-80 md:pt-100 lg:pt-50 px-4 sm:px-8"
+        >
+          About
+          <ProfileCard
+            name="Dan Ruksujarit"
+            title="Student"
+            handle="devwithdan"
+            status="Online"
+            contactText="Contact Me"
+            avatarUrl="/path/to/avatar.jpg"
+            showUserInfo={true}
+            enableTilt={true}
+            enableMobileTilt={false}
+            onContactClick={() => console.log("Contact clicked")}
+          />
+        </section>
       </main>
 
-      <main className="bg-black text-white font-sans">
+      <main className="bg-amber-200 text-[--foreground] font-sans">
         {/* Hero Section */}
         {/* <section className="h-screen flex items-center justify-center">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight">
