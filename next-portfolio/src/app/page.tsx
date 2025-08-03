@@ -16,9 +16,8 @@ export default function Home() {
       <Navbar />
       <main>
         <section className="h-screen flex flex-col justify-start items-center pt-50 sm:pt-80 md:pt-100 lg:pt-50 px-4 sm:px-8">
-          {" "}
           <div className="max-w-[90%] sm:max-w-3xl text-center space-y-6">
-            <h1 className="font-grotesk font-bold tracking-tight leading-tight text-[clamp(4rem,10vw,10rem)] bg-amber-200 px-4 py-2 rounded-md break-words">
+            <h1 className="font-grotesk font-bold tracking-tight leading-tight text-[clamp(4rem,10vw,10rem)] px-4 py-2 rounded-md break-words">
               <TextType
                 text={[">Welcome to...", ">Dev with Dan"]}
                 typingSpeed={100}
@@ -28,6 +27,19 @@ export default function Home() {
                 loop={false}
               />
             </h1>
+          </div>
+          {/* <p className="mt-6 text-xl sm:text-2xl text-gray-600 font-mono  "> */}
+          {/* <div className="font-sans absolute bottom-80 text-xl text-neutral-400"> */}
+          {/* <p className="text-xl sm:text-2xl text-neutral-500 font-sans tracking-tight"> */}
+          {/* <p className="absolute left-1/2 -translate-x-1/2 top-[calc(50%+5rem)] text-nowrap text-[clamp(1rem,2.5vw,1.5rem)] text-neutral-500 font-grotesk tracking-tight"> */}
+          {/* <p className="absolute left-1/2 -translate-x-1/2 top-[calc(50%+5rem)] sm:top-[calc(50%+6rem)] whitespace-nowrap text-[clamp(1rem,2.5vw,1.25rem)] text-neutral-500 font-grotesk tracking-tight"> */}
+          <p className="absolute left-1/2 -translate-x-1/2 top-[min(65%,calc(100%-7rem))] whitespace-nowrap text-[clamp(1rem,2vw,1.25rem)] text-neutral-500 font-grotesk tracking-tight">
+            {/* <p className=" mt-6 text-xl sm:text-2xl text-gray-500 font-sans  "> */}
+            Quantitative Finance • Computer Science
+          </p>
+          {/* </div> */}
+          <div className="font-sans  absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-xl text-neutral-400">
+            ↓ Scroll
           </div>
         </section>
 
