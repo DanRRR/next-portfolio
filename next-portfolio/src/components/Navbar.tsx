@@ -4,10 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 // import CircularText from "./CircularText";
 import { useState } from "react";
-// import { Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-// import FullscreenMenu from "@components/FullscreenMenu";
-import MorphingHamburger from "./Hamburger";
+import FullscreenMenu from "@components/FullscreenMenu";
 
 // TODO: Add hamburger dropdown and responsiveness
 export default function Navbar() {
@@ -44,7 +43,6 @@ export default function Navbar() {
         </div>
 
         {/* Navigation Links */}
-
         {/* Desktop Navigation */}
         <div className="hidden md:flex font-grotesk space-x-20 text-xl font-bold px-20">
           {["about", "work", "projects", "contact"].map((item) => (
@@ -57,47 +55,56 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
+
+        {/* Burger Icon for Mobile */}
+        <button
+          className="md:hidden z-50 text-black"
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </nav>
 
-      <div>
-        {/* Burger Icon for Mobile */}
-        <div className="fixed top-4 right-4 z-[9999] md:hidden">
-          <MorphingHamburger
-            isOpen={isOpen}
-            toggle={toggleMenu}
-            className="w-8 h-25"
-          />
-        </div>
+      {/* Side Panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={toggleMenu}
+            />
 
-        {/* Side Panel */}
-        <AnimatePresence>
-          {isOpen && (
-            <>
-              {/* Side Drawer */}
-              <motion.div
-                className="fixed top-0 right-0 h-full w-full bg-[var(--background)] z-50 p-6 flex flex-col gap-6 font-grotesk"
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "100%" }}
-                transition={{ type: "tween", duration: 0.3 }}
-              >
-                <div className="flex flex-col gap-6 pt-16">
-                  {["about", "work", "projects", "contact"].map((item) => (
-                    <Link
-                      key={item}
-                      href={`#${item}`}
-                      onClick={toggleMenu}
-                      className="text-3xl font-bold hover:text-[var(--accent)] transition relative inline-block after:block after:h-[2px] after:w-0 after:bg-[var(--accent)] after:transition-all after:duration-300 after:absolute after:left-0 after:-bottom-1 hover:after:w-full"
-                    >
-                      {item.charAt(0).toUpperCase() + item.slice(1)}
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
-      </div>
+            {/* Side Drawer */}
+            <FullscreenMenu />
+            {/* <motion.div
+              className="fixed top-0 right-0 h-full w-3/4 sm:w-1/2 bg-white z-50 p-6 flex flex-col gap-6 font-grotesk"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+            >
+              <button className="self-end" onClick={toggleMenu}>
+                <X size={24} />
+              </button>
+              {["about", "work", "projects", "contact"].map((item) => (
+                <Link
+                  key={item}
+                  href={`#${item}`}
+                  onClick={toggleMenu}
+                  className="hover:text-[var(--accent)] transition relative inline-block after:block after:h-[2px] after:w-0 after:bg-[var(--accent)] after:transition-all after:duration-300 after:absolute after:left-0 after:-bottom-1 hover:after:w-full"
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </Link>
+              ))}
+            </motion.div> */}
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }
