@@ -13,12 +13,27 @@ export default function Home() {
 
   return (
     <>
+      <Navbar />
       <main>
-        <Navbar />
+        <section className="h-screen flex flex-col justify-start items-center pt-50 sm:pt-80 md:pt-100 lg:pt-50 px-4 sm:px-8">
+          {" "}
+          <div className="max-w-[90%] sm:max-w-3xl text-center space-y-6">
+            <h1 className="font-grotesk font-bold tracking-tight leading-tight text-[clamp(4rem,10vw,10rem)] bg-amber-200 px-4 py-2 rounded-md break-words">
+              <TextType
+                text={[">Welcome to...", ">Dev with Dan"]}
+                typingSpeed={100}
+                pauseDuration={1500}
+                showCursor={true}
+                cursorCharacter="|"
+                loop={false}
+              />
+            </h1>
+          </div>
+        </section>
 
-        <section className="h-screen flex items-center justify-center">
-          <h1 className="font-grotesk text-6xl md:text-8xl font-bold tracking-tight leading-tight">
-            {/* &gt; Welcome. */}
+        {/* <section className="h-screen flex items-center justify-center">
+          
+          <h1 className="font-grotesk text-6xl md:text-8xl font-bold tracking-tight leading-tight bg-amber-200">
             <TextType
               text={[">Welcome to...", " >Dev with Dan"]}
               typingSpeed={100}
@@ -27,8 +42,9 @@ export default function Home() {
               cursorCharacter="|"
               loop={false}
             />
-          </h1>
-          {/* <h2>
+          </h1> */}
+
+        {/* <h2>
             <SplitText
               text=" I am Dan "
               className="font-grotesk text-2xl md:text-8xl font-bold tracking-tight leading-tight"
@@ -44,14 +60,14 @@ export default function Home() {
               onLetterAnimationComplete={handleAnimationComplete}
             />
           </h2> */}
-          {/* <TextType
+        {/* <TextType
             text={["Text typing effect", "for your websites", "Happy coding!"]}
             typingSpeed={75}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter="|"
           /> */}
-        </section>
+        {/* </section> */}
       </main>
 
       <main className="bg-black text-white font-sans">
