@@ -5,6 +5,7 @@
 import Navbar from "@components/Navbar";
 import SplitText from "@components/SplitText";
 import TextType from "@components/TextType";
+// import { useEffect, useState } from "react";
 
 export default function Home() {
   const handleAnimationComplete = () => {
@@ -32,7 +33,7 @@ export default function Home() {
           <div className="absolute left-1/2 -translate-x-1/2 top-[min(65%,calc(100%-7rem))] max-w-[90vw] w-full px-4 text-center text-[clamp(1rem,2.5vw,1.25rem)] text-neutral-500 font-sans tracking-tight break-words">
             <SplitText
               text="Quantitative Finance • Computer Science"
-              delay={10}
+              delay={0}
               duration={0.6}
               ease="power3.out"
               splitType="chars"
@@ -96,11 +97,11 @@ export default function Home() {
 
       <main className="bg-black text-white font-sans">
         {/* Hero Section */}
-        <section className="h-screen flex items-center justify-center">
+        {/* <section className="h-screen flex items-center justify-center">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight">
             Design. Motion. Code.
           </h1>
-        </section>
+        </section> */}
 
         {/* Mission Statement */}
         <section className="py-32 px-8 bg-white text-black">
