@@ -28,17 +28,12 @@ export default function Home() {
               />
             </h1>
           </div>
-          {/* <p className="mt-6 text-xl sm:text-2xl text-gray-600 font-mono  "> */}
-          {/* <div className="font-sans absolute bottom-80 text-xl text-neutral-400"> */}
-          {/* <p className="text-xl sm:text-2xl text-neutral-500 font-sans tracking-tight"> */}
-          {/* <p className="absolute left-1/2 -translate-x-1/2 top-[calc(50%+5rem)] text-nowrap text-[clamp(1rem,2.5vw,1.5rem)] text-neutral-500 font-grotesk tracking-tight"> */}
-          {/* <p className="absolute left-1/2 -translate-x-1/2 top-[calc(50%+5rem)] sm:top-[calc(50%+6rem)] whitespace-nowrap text-[clamp(1rem,2.5vw,1.25rem)] text-neutral-500 font-grotesk tracking-tight"> */}
-          <p className="absolute left-1/2 -translate-x-1/2 top-[min(65%,calc(100%-7rem))] whitespace-nowrap text-[clamp(1rem,2vw,1.25rem)] text-neutral-500 font-grotesk tracking-tight">
-            {/* <p className=" mt-6 text-xl sm:text-2xl text-gray-500 font-sans  "> */}
+
+          <p className="absolute left-1/2 -translate-x-1/2 top-[min(65%,calc(100%-7rem))] whitespace-nowrap text-[clamp(1rem,2vw,1.25rem)] text-neutral-500 font-sans tracking-tight">
             Quantitative Finance • Computer Science
           </p>
           {/* </div> */}
-          <div className="font-sans  absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-xl text-neutral-400">
+          <div className="font-grotesk  absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-xl text-neutral-400">
             ↓ Scroll
           </div>
         </section>
