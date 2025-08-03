@@ -3,13 +3,13 @@
 // import Link from "next/link";
 // If Navbar.tsx is in src/components/Navbar.tsx, use the following relative import:
 import Navbar from "@components/Navbar";
-// import SplitText from "@components/SplitText";
+import SplitText from "@components/SplitText";
 import TextType from "@components/TextType";
 
 export default function Home() {
-  // const handleAnimationComplete = () => {
-  //   console.log("All letters have animated!");
-  // };
+  const handleAnimationComplete = () => {
+    console.log("All letters have animated!");
+  };
 
   return (
     <>
@@ -29,9 +29,26 @@ export default function Home() {
             </h1>
           </div>
 
-          <p className="absolute left-1/2 -translate-x-1/2 top-[min(65%,calc(100%-7rem))] whitespace-nowrap text-[clamp(1rem,2vw,1.25rem)] text-neutral-500 font-sans tracking-tight">
+          <div className="absolute left-1/2 -translate-x-1/2 top-[min(65%,calc(100%-7rem))] max-w-[90vw] w-full px-4 text-center text-[clamp(1rem,2.5vw,1.25rem)] text-neutral-500 font-sans tracking-tight break-words">
+            <SplitText
+              text="Quantitative Finance • Computer Science"
+              delay={10}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+              onLetterAnimationComplete={handleAnimationComplete}
+            />
+          </div>
+
+          {/* <p className="absolute left-1/2 -translate-x-1/2 top-[min(65%,calc(100%-7rem))] whitespace-nowrap text-[clamp(1rem,2vw,1.25rem)] text-neutral-500 font-sans tracking-tight">
             Quantitative Finance • Computer Science
-          </p>
+          </p> */}
+
           {/* </div> */}
           <div className="font-grotesk  absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-xl text-neutral-400">
             ↓ Scroll
